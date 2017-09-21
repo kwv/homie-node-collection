@@ -11,7 +11,7 @@
 #define SRC_OTA_H
 
 #include <Homie.h>       // used for logger output
-#include <OLEDDisplay.h> // used for display output
+//#include <OLEDDisplay.h> // used for display output
 #include <ArduinoOTA.h>
 
 // -----------------------------------------------------------------------------
@@ -37,7 +37,7 @@ public:
 // -----------------------------------------------------------------------------
 // OTA info via OLED Display
 // -----------------------------------------------------------------------------
-
+/*
 class OtaDisplay : public OtaLogger {
 private:
   OLEDDisplay *_display;
@@ -49,5 +49,5 @@ public:
 
   void setup(uint16_t port = 8266, const char *password = "") override;
 };
-
+*/
 #endif /* end of include guard: SRC_OTA_H */

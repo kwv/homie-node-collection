@@ -94,33 +94,33 @@ void OtaLogger::onError(ota_error_t error) {
 // OTA info via OLED Display
 // -----------------------------------------------------------------------------
 
-OtaDisplay::OtaDisplay(OLEDDisplay *display)
-  : OtaLogger() {
-  _display = display;
-};
-
-void OtaDisplay::setup(uint16_t port, const char *password) {
-  // Don't do anything with the display here (setup, init, ...)
-  // It'll crash Homie
-  Homie.getLogger() << "• OTA - Display" << endl;
-  OtaLogger::setup(port, password);
-}
-
-void OtaDisplay::onEnd() {
-  OtaLogger::onEnd();
-  _display->clear();
-  _display->setTextAlignment(TEXT_ALIGN_CENTER);
-  _display->setFont(ArialMT_Plain_10);
-  _display->drawString(64, 10, "Rebooting...");
-  _display->display();
-};
-
-void OtaDisplay::onProgress(unsigned int progress, unsigned int total) {
-  OtaLogger::onProgress(progress, total);
-  _display->clear();
-  _display->setTextAlignment(TEXT_ALIGN_CENTER);
-  _display->setFont(ArialMT_Plain_10);
-  _display->drawString(64, 10, "OTA Update");
-  _display->drawProgressBar(2, 28, 124, 8, progress / (total / 100));
-  _display->display();
-};
+// OtaDisplay::OtaDisplay(OLEDDisplay *display)
+//   : OtaLogger() {
+//   _display = display;
+// };
+//
+// void OtaDisplay::setup(uint16_t port, const char *password) {
+//   // Don't do anything with the display here (setup, init, ...)
+//   // It'll crash Homie
+//   Homie.getLogger() << "• OTA - Display" << endl;
+//   OtaLogger::setup(port, password);
+// }
+//
+// void OtaDisplay::onEnd() {
+//   OtaLogger::onEnd();
+//   _display->clear();
+//   _display->setTextAlignment(TEXT_ALIGN_CENTER);
+//   _display->setFont(ArialMT_Plain_10);
+//   _display->drawString(64, 10, "Rebooting...");
+//   _display->display();
+// };
+//
+// void OtaDisplay::onProgress(unsigned int progress, unsigned int total) {
+//   OtaLogger::onProgress(progress, total);
+//   _display->clear();
+//   _display->setTextAlignment(TEXT_ALIGN_CENTER);
+//   _display->setFont(ArialMT_Plain_10);
+//   _display->drawString(64, 10, "OTA Update");
+//   _display->drawProgressBar(2, 28, 124, 8, progress / (total / 100));
+//   _display->display();
+// };
