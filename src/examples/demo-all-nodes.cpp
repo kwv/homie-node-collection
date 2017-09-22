@@ -19,7 +19,7 @@
 OtaLogger ota;
 
 // Create one node of each kind
-BME280Node  bme280Node("bme280");
+//BME280Node  bme280Node("bme280");
 DHT22Node   dht22Node("dht22", PIN_DHT);
 RelayNode   relayNode("relay", PIN_RELAY, PIN_LED);
 
@@ -33,7 +33,7 @@ ButtonNode  buttonNode("button", PIN_BUTTON, []() {
 
 void setupHandler() {
   // Advertise units
-  bme280Node.setupHandler();
+//  bme280Node.setupHandler();
   dht22Node.setupHandler();
 };
 
@@ -50,7 +50,7 @@ void setup() {
   ota.setup();
 
   // Initializes I2C for BME280 sensor
-  Wire.begin(PIN_SDA, PIN_SCL);
+  //Wire.begin(PIN_SDA, PIN_SCL);
 
   // Set callback for contact node here, just to show alternative
   contactNode.onChange([](bool open) {
